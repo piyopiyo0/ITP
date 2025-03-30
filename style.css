@@ -1656,47 +1656,85 @@ footer::after {
     background-size: 100%;
     min-height: 300px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding-top: 80px;
 }
+
 .swiper {
     width: 100%;
     overflow: hidden;
 }
+
 .swiper-wrapper {
     display: flex;
-    flex-wrap: nowrap;
-
+    align-items: flex-start;
+    height: 100px;
 }
+
 .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 0 100px;
-    padding-bottom: 55px;
-    width: 50%;
+    align-items: flex-start;
+    padding: 0 20px;
+    height: 100px !important;
+    position: relative;
+    padding-top: 20px;
 }
+
 .swiper-slide img {
-    max-width: 100px;
-    max-height: 50px;
+    max-width: 120px;
+    height: 40px;
+    object-fit: contain;
+    transition: all 0.3s ease;
 }
-/* Клікабельні стрілки */
+
+.swiper-slide .grayscale-logo {
+    opacity: 1;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.swiper-slide .color-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: 2;
+}
+
+.swiper-slide:hover .grayscale-logo {
+    opacity: 0;
+}
+
+.swiper-slide:hover .color-logo {
+    opacity: 1;
+}
+
+/* Navigation arrows */
 .custom-prev, .custom-next {
     position: absolute;
     width: 200px;
-    height: 100px;
+    height: 50px;
     bottom: 10px;
     cursor: pointer;
+    z-index: 10;
 }
+
 .custom-prev {
-    left: 5%;
-    cursor: pointer;
+    left: 7%;
+    bottom: 15%;
 }
+
 .custom-next {
-    right: 5%;
-    cursor: pointer;
+    right: 7%;
+    bottom: 15%;
 }
 
 
@@ -1928,6 +1966,8 @@ footer::after {
 
 .solution-content li:nth-child(1) {
     background-image: url('images/first-row.png');
+    background-size: contain;
+
 }
 
 .solution-content li:nth-child(2) {

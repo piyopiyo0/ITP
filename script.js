@@ -120,25 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 // Partners Slider
-const swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    spaceBetween: 10,
+const partnersSwiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
     loop: true,
+    speed: 800,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        prevEl: '.custom-prev',
+        nextEl: '.custom-next',
+    },
     breakpoints: {
-        768: { slidesPerView: 4 },
-        1024: { slidesPerView: 4 }
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        }
     }
 });
 
+// Remove old event listeners
 const prevButton = document.querySelector('.custom-prev');
 const nextButton = document.querySelector('.custom-next');
-
-if (prevButton) {
-    prevButton.addEventListener('click', () => swiper.slidePrev());
-}
-if (nextButton) {
-    nextButton.addEventListener('click', () => swiper.slideNext());
-}
 
     // Legacy Tabs Implementation
     const legacyTabs = document.querySelectorAll('#tabs a');
