@@ -1,3 +1,48 @@
+// Dropdown menu functionality
+const dropdown = document.querySelector('.dropdown');
+const dropdownContent = document.querySelector('.dropdown-content');
+const navbar = document.querySelector('.navbar');
+const blurOverlay = document.querySelector('.blur-overlay');
+const dropdownLink = dropdown.querySelector('a');
+
+// Handle dropdown click
+dropdownLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    dropdownContent.classList.toggle('active');
+    navbar.classList.toggle('dropdown-active');
+    blurOverlay.style.display = dropdownContent.classList.contains('active') ? 'block' : 'none';
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+        dropdownContent.classList.remove('active');
+        navbar.classList.remove('dropdown-active');
+        blurOverlay.style.display = 'none';
+    }
+});
+
+// Close dropdown on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        dropdownContent.classList.remove('active');
+        navbar.classList.remove('dropdown-active');
+        blurOverlay.style.display = 'none';
+    }
+});
+
+// Handle menu item clicks
+dropdownContent.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        // Add your navigation logic here
+        dropdownContent.classList.remove('active');
+        navbar.classList.remove('dropdown-active');
+        blurOverlay.style.display = 'none';
+    });
+});
+
 // Check if jQuery is loaded
 if (typeof jQuery === 'undefined') {
     console.error('jQuery is not loaded!');
@@ -121,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Partners Slider
 const partnersSwiper = new Swiper('.swiper', {
-    slidesPerView: 1,
+    slidesPerView: 4,
     spaceBetween: 30,
     loop: true,
     speed: 800,
