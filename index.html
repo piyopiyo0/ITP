@@ -114,50 +114,6 @@
         </section>
 
         <!-- SERVICES START -->
-<!-- 
-        <section class="services-section">
-            <div class="section-header">
-                <h2>ПОЛНЫЙ СПЕКТР IT-УСЛУГ<br>ДЛЯ РАЗНЫХ ТИПОВ КОМПАНИЙ</h2>
-                <p class="section-description">
-                    Мы ориентируемся на потребности наших клиентов, предоставляя индивидуальные решения для крупных компаний, а также для малого и среднего бизнеса, учитывая особенности их деятельности.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="/images/vector.png" alt="Security Icon">
-                    </div>
-                    <h3>БЕЗОПАСНОСТЬ<br>IT ИНФРАСТРУКТУРЫ</h3>
-                    <p>Обеспечьте защиту вашей компании от угроз и рисков (вирусов, спама, DDoS-атаки) с помощью комплексного программного обеспечения.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <img src="/images/vector.png" alt="Management Icon">
-                    </div>
-                    <h3>УПРАВЛЕНИЕ<br>IT-УСЛУГАМИ</h3>
-                    <p>Создайте концепцию управления IT-процессами, повышающую эффективность организации и оптимизирующую различные IT-функции компании.</p>
-                </div>
-
-                <div class="service-card featured">
-                    <div class="service-icon">
-                        <img src="/images/vector.png" alt="Infrastructure Icon">
-                    </div>
-                    <h3>УПРАВЛЕНИЕ<br>IT ИНФРАСТРУКТУРОЙ</h3>
-                    <p>Следите за состоянием инфраструктуры, анализируйте ее эффективность и управляйте аппаратными и программными средствами</p>
-                </div>
-            </div>
-
-            <button class="button">
-                                <span class="button-text">Получить консультацию</span>
-                                <span class="button-icon">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                                          <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                      </svg>
-                                </span>
-                              </button>
-        </section> -->
 
         <section class="services">
             <div class="services-grid">
@@ -617,38 +573,50 @@
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup-content">
             <button class="close-popup" id="closePopup">×</button>
-            <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
-            <p class="popup-subtitle">Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
-            <form id="consultationForm" class="popup-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required placeholder="ФИО">
+            
+            <!-- Form Content -->
+            <div class="form-content" id="formContent">
+                <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+                <p class="popup-subtitle">Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+                <form id="consultationForm" class="popup-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="ФИО">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Email">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required placeholder="Email">
+                    <div class="form-row">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            <label for="agreement">Я принимаю условия <a href="#" class="agreement-link">политики конфиденциальности</a></label>
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group full-width">
-                        <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="agreement" name="agreement" required>
-                        <label for="agreement">Я принимаю условия <a href="#">политики конфиденциальности</a></label>
-                    </div>
-                </div>
-                <button type="submit" class="submit-button">
-                    <span>Отправить</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </form>
+                    <button type="submit" class="button">
+                        <span class="button-text">Отправить</span>
+                        <span class="button-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Message (initially hidden) -->
+            <div class="success-content" id="successContent" style="display: none;">
+                <h2>СПАСИБО ЗА ЗАЯВКУ!</h2>
+                <p class="popup-subtitle">Мы свяжемся с вами в ближайшее время</p>
+            </div>
         </div>
     </div>
 

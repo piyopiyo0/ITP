@@ -78,16 +78,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePopup = document.getElementById('closePopup');
     const ctaButtons = document.querySelectorAll('.button');
     const consultationForm = document.getElementById('consultationForm');
+    const submitButton = consultationForm.querySelector('button[type="submit"]');
+    const formContent = document.getElementById('formContent');
+    const successContent = document.getElementById('successContent');
 
     // Popup Event Listeners
     ctaButtons.forEach(button => {
         button.addEventListener('click', function(e) {
+            console.log('CTA Button clicked');
             e.preventDefault();
             popupOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
 
+    // Handle form submission via submit button click
+    submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Submit button clicked');
+        
+        // Get form data
+        const formData = new FormData(consultationForm);
+        const data = Object.fromEntries(formData.entries());
+        
+        console.log('Form data:', data);
+
+        // Hide form and show success message
+        formContent.style.display = 'none';
+        successContent.style.display = 'block';
+        
+        // Close popup after 3 seconds
+        setTimeout(() => {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Reset form and content after popup closes
+            setTimeout(() => {
+                formContent.style.display = 'block';
+                successContent.style.display = 'none';
+                consultationForm.reset();
+            }, 300);
+        }, 3000);
+    });
+
+    // Close popup handlers
     closePopup.addEventListener('click', function() {
         popupOverlay.classList.remove('active');
         document.body.style.overflow = '';
@@ -102,17 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    consultationForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(consultationForm);
-        const data = Object.fromEntries(formData.entries());
-        console.log('Form submitted:', data);
-        popupOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        consultationForm.reset();
-        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-    });
-
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
             popupOverlay.classList.remove('active');
@@ -120,8 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             consultationForm.reset();
         }
     });
-
-
+});
 
 // Partners Slider
 const partnersSwiper = new Swiper('.swiper', {
@@ -156,8 +178,6 @@ const partnersSwiper = new Swiper('.swiper', {
 // // Remove old event listeners
 const prevButton = document.querySelector('.custom-prev');
 const nextButton = document.querySelector('.custom-next');
-
-
 
 // Tabs Implementation
 const tabLinks = document.querySelectorAll('#tabs a');
@@ -221,7 +241,7 @@ tabLinks.forEach(tab => {
 const solutionsSwiper = new Swiper('.solutions-swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
-    loop: true,
+    loop: false,
     navigation: {
         nextEl: '.solutions-button-next',
         prevEl: '.solutions-button-prev',
@@ -249,5 +269,4 @@ document.querySelector('.solutions-button-prev').addEventListener('click', () =>
 });
 document.querySelector('.solutions-button-next').addEventListener('click', () => {
     solutionsSwiper.slideNext();
-});
 });
