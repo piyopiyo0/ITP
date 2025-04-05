@@ -121,48 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Services Tabs
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
 
-    // Hide all tab contents initially
-    tabContents.forEach(content => {
-        content.style.display = 'none';
-        content.classList.remove('active');
-    });
-
-    // Set first tab as active by default
-    if (tabs[0] && tabContents[0]) {
-        tabs[0].classList.add('active');
-        tabContents[0].style.display = 'block';
-        tabContents[0].classList.add('active');
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Remove active class from all tabs and contents
-            tabs.forEach(t => t.classList.remove('active'));
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                content.style.display = 'none';
-            });
-
-            // Add active class to clicked tab
-            tab.classList.add('active');
-
-            // Show corresponding content
-            const tabId = tab.getAttribute('data-tab');
-            const content = document.getElementById(tabId);
-            
-            if (content) {
-                content.style.display = 'block';
-                // Use setTimeout to trigger the opacity transition
-                setTimeout(() => {
-                    content.classList.add('active');
-                }, 10);
-            }
-        });
-    });
 
 // Partners Slider
 const partnersSwiper = new Swiper('.swiper', {
@@ -194,49 +153,69 @@ const partnersSwiper = new Swiper('.swiper', {
     }
 });
 
-// Remove old event listeners
+// // Remove old event listeners
 const prevButton = document.querySelector('.custom-prev');
 const nextButton = document.querySelector('.custom-next');
 
-    // Legacy Tabs Implementation
-    const legacyTabs = document.querySelectorAll('#tabs a');
-    const legacyContents = document.querySelectorAll('#content > div');
 
-    // Hide all content initially
-    legacyContents.forEach(content => {
-        content.style.display = 'none';
-    });
 
-    // Show first content by default
-    if (legacyContents[0]) {
-        legacyContents[0].style.display = 'block';
+// Tabs Implementation
+const tabLinks = document.querySelectorAll('#tabs a');
+const tabContents = document.querySelectorAll('#content > div');
+
+// Function to reorder tabs
+function reorderTabs(activeTab) {
+    const tabsList = document.getElementById('tabs');
+    const activeTabLi = activeTab.parentElement;
+    
+    // If active tab's li is not the first child, reorder
+    if (activeTabLi !== tabsList.firstElementChild) {
+        tabsList.insertBefore(activeTabLi, tabsList.firstElementChild);
     }
+}
 
-    // Add click event listeners to tabs
-    legacyTabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove current class from all tabs
-            legacyTabs.forEach(t => t.parentElement.removeAttribute('id'));
-            
-            // Add current class to clicked tab
-            this.parentElement.setAttribute('id', 'current');
-            
-            // Hide all content
-            legacyContents.forEach(content => {
-                content.style.display = 'none';
-            });
-            
-            // Show selected content
-            const targetId = this.getAttribute('title');
-            const targetContent = document.getElementById(targetId);
-            
-            if (targetContent) {
-                targetContent.style.display = 'block';
-            }
+// Hide all content initially
+tabContents.forEach(content => {
+    content.style.display = 'none';
+});
+
+// Show first content by default
+if (tabContents[0]) {
+    tabContents[0].style.display = 'block';
+    if (tabLinks[0]) {
+        tabLinks[0].parentElement.setAttribute('id', 'current');
+        reorderTabs(tabLinks[0]);
+    }
+}
+
+// Add click event listeners to tabs
+tabLinks.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove current class from all tabs
+        tabLinks.forEach(t => t.parentElement.removeAttribute('id'));
+        
+        // Add current class to clicked tab
+        this.parentElement.setAttribute('id', 'current');
+        
+        // Reorder tabs to put active one first
+        reorderTabs(this);
+        
+        // Hide all content
+        tabContents.forEach(content => {
+            content.style.display = 'none';
         });
+        
+        // Show selected content
+        const targetId = this.getAttribute('title');
+        const targetContent = document.getElementById(targetId);
+        
+        if (targetContent) {
+            targetContent.style.display = 'block';
+        }
     });
+});
 
 // Solutions Slider
 const solutionsSwiper = new Swiper('.solutions-swiper', {
