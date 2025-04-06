@@ -1237,6 +1237,11 @@ footer::after {
     width: 30%;
 }
 
+.btn-centered {
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
 
 
 .stats-container {
@@ -1298,9 +1303,29 @@ footer::after {
 }
 
 @media (max-width: 768px) {
+
+    .about-section {
+        margin-top: 2rem;
+        background-image: none;
+        margin: 0;
+        padding: 3rem 1rem;
+    }
+
+    
+    .section-header {
+        padding-bottom: 2rem;
+    }
+
     .stats-container {
         flex-direction: column;
-        gap: 3rem;
+        gap: 5rem;
+        padding: 5rem 1rem;
+        background-image: url('images/about-section-border-mobile.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+
     }
 
     .stat-item:not(:last-child)::after {
@@ -1312,7 +1337,15 @@ footer::after {
     }
 
     .stat-label {
-        max-width: none;
+        max-width: 40%;
+    }
+
+    .about-description {
+        width: 80%;
+    }
+
+    .btn-centered {
+        margin-top: 0;
     }
 }
 
@@ -1353,7 +1386,7 @@ footer::after {
     background-color: transparent;
     padding: 2rem;
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
     min-height: 300px; /* Adjust based on your content */
     display: flex;
@@ -1362,9 +1395,9 @@ footer::after {
   }
 
   .service-card:hover {
-    background: linear-gradient(135deg, 
-    rgba(0, 240, 255, 0.1) 0%,
-    rgba(0, 240, 255, 0.05) 50%,
+    background: linear-gradient(-135deg, 
+    rgba(0, 240, 255, 0.3) 0%,
+    rgba(0, 240, 255, 0.1) 50%,
     transparent 100%);
     border-color: transparent;
   }
@@ -1378,6 +1411,86 @@ footer::after {
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    position: relative;
+    transition: all 0.5s ease;
+  }
+
+  /* Create glowing border effect */
+  .service-card .icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+        rgba(67, 255, 255, 0),
+        rgba(67, 255, 255, 0.3),
+        rgba(67, 255, 255, 0)
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  /* Create pulsing effect */
+  .service-card .icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* Hover effects for the icon */
+  .service-card:hover .icon {
+    transform: rotate(360deg) scale(1.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(67, 255, 255, 0.3);
+  }
+
+  /* Show glowing border on hover */
+  .service-card:hover .icon::before {
+    opacity: 1;
+    animation: rotate 2s linear infinite;
+  }
+
+  /* Add pulsing effect on hover */
+  .service-card:hover .icon::after {
+    animation: pulse 1.5s ease-out infinite;
+  }
+
+  /* Rotation animation */
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  }
+
+  /* Pulsing animation */
+  @keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
   }
 
   .service-card h3 {
