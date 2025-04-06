@@ -19,23 +19,23 @@
         </svg>
         <div class="navbar-content">
             <div class="nav-brand">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
             </div>
             
             <div class="nav-links">
-                <a href="#home">О компании</a>
+                <a href="about.html">О компании</a>
                 <a href="#services">Услуги</a>
                 <div class="dropdown">
                     <a href="#solutions">Решения</a>
                     <div class="dropdown-content">
-                        <a href="#hardware">Аппаратное обеспечение</a>
-                        <a href="#software">Программное обеспечение</a>
-                        <a href="#it-services">IT-услуги</a>
-                        <a href="#cloud">Облачные решения</a>
+                        <a href="hardware.html">Аппаратное обеспечение</a>
+                        <a href="software.html">Программное обеспечение</a>
+                        <a href="it-services.html">IT-услуги</a>
+                        <a href="cloud-solutions.html">Облачные решения</a>
                     </div>
                 </div>
                 <a href="#partners">Партнеры</a>
-                <a href="/pages/contacts.html">Контакты</a>
+                <a href="contacts.html">Контакты</a>
             </div>
             
             <div class="navbar-right">
@@ -52,15 +52,33 @@
     </nav>
 
     <div class="mobile-menu">
-
-        <a href="#home">О компании</a>
+        <a href="about.html">О компании</a>
         <a href="#services">Услуги</a>
-        <a href="#solutions">Решения</a>
+        <div class="mobile-dropdown">
+            <a href="#solutions" class="mobile-dropdown-toggle">
+                <span>Решения</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="hardware.html">
+                    <span>Аппаратное обеспечение</span>
+                </a>
+                <a href="software.html">
+                    <span>Программное обеспечение</span>
+                </a>
+                <a href="it-services.html">
+                    <span>IT-услуги</span>
+                </a>
+                <a href="cloud-solutions.html">
+                    <span>Облачные решения</span>
+                </a>
+            </div>
+        </div>
         <a href="#partners">Партнеры</a>
-        <a href="#contact">Контакты</a>
+        <a href="contacts.html">Контакты</a>
         <div class="mobile-phone">
             <i class="fas fa-phone"></i>
-            <span>+1 (123) 456-7890</span>
+            <span>+7 701 541 32 81</span>
         </div>
     </div>
 
@@ -115,7 +133,7 @@
 
         <!-- SERVICES START -->
 
-        <section class="services">
+        <section class="services" id="services">
             <div class="services-grid">
               <!-- Header Section -->
               <div class="services-header">
@@ -406,7 +424,7 @@
             </div>
         </section>
 
-        <section class="partners-section">
+        <section class="partners-section" id="partners">
             <div class="section-header">
                 <h2>ПАРТНЕРЫ</h2>
             </div>
