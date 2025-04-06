@@ -1420,7 +1420,6 @@ footer::after {
     transition: all 0.5s ease;
   }
 
-  /* Create glowing border effect */
   .service-card .icon::before {
     content: '';
     position: absolute;
@@ -1430,16 +1429,16 @@ footer::after {
     bottom: -2px;
     border-radius: 50%;
     background: linear-gradient(45deg, 
-        rgba(67, 255, 255, 0),
-        rgba(67, 255, 255, 0.3),
-        rgba(67, 255, 255, 0)
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
     );
     z-index: -1;
     opacity: 0;
     transition: all 0.5s ease;
   }
 
-  /* Create pulsing effect */
+
   .service-card .icon::after {
     content: '';
     position: absolute;
@@ -1454,25 +1453,27 @@ footer::after {
     z-index: -1;
   }
 
-  /* Hover effects for the icon */
+ 
   .service-card:hover .icon {
     transform: rotate(360deg) scale(1.1);
     border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(67, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
 
-  /* Show glowing border on hover */
+  .service-card:hover .icon img {
+    filter: brightness(0) invert(1);
+  }
+
+
   .service-card:hover .icon::before {
     opacity: 1;
     animation: rotate 2s linear infinite;
   }
 
-  /* Add pulsing effect on hover */
   .service-card:hover .icon::after {
     animation: pulse 1.5s ease-out infinite;
   }
 
-  /* Rotation animation */
   @keyframes rotate {
     0% {
         transform: rotate(0deg);
@@ -1510,15 +1511,11 @@ footer::after {
     opacity: 0.8;
   }
 
-  .service-card:hover .icon {
-    /* border-color: rgba(255, 255, 255, 0.3); */
-  }
 
   .service-card:hover p {
     opacity: 1;
   }
 
-  /* If you want to add a smooth transition for the gradient */
   .service-card::before {
     content: '';
     position: absolute;
@@ -1538,7 +1535,6 @@ footer::after {
 
   .services .cta-container {
     display: flex;
-    /* justify-content: flex-end; */
     align-items: flex-end;
   }
 
@@ -1682,7 +1678,6 @@ footer::after {
 
 .info-block:hover {
     clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
-
     transform: translateY(-5px);
     background: linear-gradient(135deg, 
         rgba(0, 240, 255, 0.1) 0%,
@@ -1691,6 +1686,15 @@ footer::after {
         
 }
 
+@media (max-width: 1024px) {
+.why-us-grid {
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+.empty-block {
+    display: none;
+}
 
 @media (max-width: 768px) {
     .why-us-grid {
@@ -1699,30 +1703,34 @@ footer::after {
     }
 
     .section-header {
-        margin-bottom: 1.5rem;
     }
 
     .info-block {
         aspect-ratio: 1 / 1; /* Makes blocks square */
-        height: auto; /* Remove fixed height */
+        /* height: auto;  */
         width: 100%;
-        padding: 1.5rem; /* Slightly reduced padding */
-        
         /* Center content */
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
 
+    .info-block:hover {
+        clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+        transform: translateY(-5px);
+        background: linear-gradient(135deg, 
+            rgba(0, 240, 255, 0.1) 0%,
+            rgba(0, 240, 255, 0.05) 50%,
+            transparent 100%);
+    }
     .info-block h3 {
-        padding-top: 30%;
-        font-size: 1.1rem; /* Slightly smaller font */
+        font-size: 1.2rem; /* Slightly smaller font */
         margin-bottom: 0.5rem;
     }
 
     .info-block p {
-        font-size: 0.85rem;
-        /* Ensure text doesn't overflow */
+        font-size: 1rem;
         display: -webkit-box;
         -webkit-line-clamp: 6; /* Show maximum 6 lines */
         -webkit-box-orient: vertical;
