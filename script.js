@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Partners Slider
-const partnersSwiper = new Swiper('.swiper', {
+const partnersSwiper = new Swiper('.partners-swiper', {
     slidesPerView: 4,
     spaceBetween: 30,
     loop: true,
@@ -202,18 +202,21 @@ const partnersSwiper = new Swiper('.swiper', {
         disableOnInteraction: false,
     },
     navigation: {
-        prevEl: '.custom-prev',
-        nextEl: '.custom-next',
+        prevEl: '.custom-next',
+        nextEl: '.custom-prev',
     },
     breakpoints: {
-        480: {
-            slidesPerView: 2,
+        // Mobile - 1 slide
+        320: {
+            slidesPerView: 1,
             spaceBetween: 20,
         },
+        // Tablet - 3 slides
         768: {
             slidesPerView: 3,
             spaceBetween: 30,
         },
+        // Desktop - 4 slides
         1024: {
             slidesPerView: 4,
             spaceBetween: 40,
@@ -234,9 +237,34 @@ function reorderTabs(activeTab) {
     const tabsList = document.getElementById('tabs');
     const activeTabLi = activeTab.parentElement;
     
-    // If active tab's li is not the first child, reorder
-    if (activeTabLi !== tabsList.firstElementChild) {
-        tabsList.insertBefore(activeTabLi, tabsList.firstElementChild);
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+        // Get all tabs and convert to array for easier manipulation
+        const allTabs = Array.from(tabsList.children);
+        
+        // First, remove current active tab from its position
+        const activeIndex = allTabs.indexOf(activeTabLi);
+        if (activeIndex !== -1) {
+            allTabs.splice(activeIndex, 1);
+        }
+        
+        // Create new order: put non-active tabs first, then active tab
+        const newOrder = [...allTabs, activeTabLi];
+        
+        // Clear the tabs list
+        while (tabsList.firstChild) {
+            tabsList.removeChild(tabsList.firstChild);
+        }
+        
+        // Add tabs back in new order
+        newOrder.forEach(tab => {
+            tabsList.appendChild(tab);
+        });
+    } else {
+        // Desktop behavior - move to first position
+        if (activeTabLi !== tabsList.firstElementChild) {
+            tabsList.insertBefore(activeTabLi, tabsList.firstElementChild);
+        }
     }
 }
 
@@ -244,15 +272,6 @@ function reorderTabs(activeTab) {
 tabContents.forEach(content => {
     content.style.display = 'none';
 });
-
-// Show first content by default
-if (tabContents[0]) {
-    tabContents[0].style.display = 'block';
-    if (tabLinks[0]) {
-        tabLinks[0].parentElement.setAttribute('id', 'current');
-        reorderTabs(tabLinks[0]);
-    }
-}
 
 // Add click event listeners to tabs
 tabLinks.forEach(tab => {
@@ -265,7 +284,7 @@ tabLinks.forEach(tab => {
         // Add current class to clicked tab
         this.parentElement.setAttribute('id', 'current');
         
-        // Reorder tabs to put active one first
+        // Reorder tabs
         reorderTabs(this);
         
         // Hide all content
@@ -282,6 +301,25 @@ tabLinks.forEach(tab => {
         }
     });
 });
+
+// Add resize handler to maintain correct order when screen size changes
+window.addEventListener('resize', () => {
+    const currentTab = document.querySelector('#tabs li[id="current"] a');
+    if (currentTab) {
+        reorderTabs(currentTab);
+    }
+});
+
+// Initialize the first tab as active on page load
+if (tabLinks[0]) {
+    tabLinks[0].parentElement.setAttribute('id', 'current');
+    reorderTabs(tabLinks[0]);
+    
+    const firstContent = document.getElementById(tabLinks[0].getAttribute('title'));
+    if (firstContent) {
+        firstContent.style.display = 'block';
+    }
+}
 
 // Solutions Slider
 const solutionsSwiper = new Swiper('.solutions-swiper', {
