@@ -2356,18 +2356,20 @@ footer::after {
 
 .solution-content .button {
     position: absolute;
-    right: 0;
-    top: 90%;
-    transform: translateY(-50%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
+    margin-top: 5rem;
+    height: auto;
 }
 
 .solutions-pagination {
     position: relative !important;
-    margin-top: 2rem;
+    padding-top: 5rem !important;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
     background-image: url('images/solutions-border-bottom.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -2386,7 +2388,10 @@ footer::after {
     position: relative;
     border-radius: 0;
     transition: all 0.3s ease;
+    padding: 0;
 }
+
+
 
 .solutions-pagination .swiper-pagination-bullet:after {
     content: '';
@@ -2408,21 +2413,45 @@ footer::after {
     width: 100%;
 }
 
+.solutions-pagination .wiper-pagination-fraction .swiper-pagination-horizontal {
+    padding-top: 5% !important;
+}
+
+/* Add styles for the navigation arrows */
+.solutions-button-prev,
+.solutions-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 10;
+}
+
+.solutions-button-prev img,
+.solutions-button-next img {
+    width: 50px; /* Increase the width */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+/* Hover effect */
+.solutions-button-prev:hover img,
+.solutions-button-next:hover img {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .solutions-section {
-        padding: 2rem 1rem;
-    }
-
-    .solution-slide {
-        padding: 2rem;
-    }
-
-    .solution-content h3 {
-        font-size: 1.25rem;
-    }
-
-    .solution-content li {
-        font-size: 0.9rem;
+    .solutions-button-prev img,
+    .solutions-button-next img {
+        width: 28px; /* Slightly smaller on mobile */
     }
 }
 
@@ -2573,4 +2602,122 @@ footer::after {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.solutions-navigation-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    /* padding: 2rem 0; */
+}
+
+.solutions-pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/solutions-border-bottom.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* padding: 2rem; */
+    width: 100%; /* Keep full width for background */
+    font-size: 2rem;
+}
+
+.solutions-button-prev,
+.solutions-button-next {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    transform: translateY(-80%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 10;
+}
+
+.solutions-button-prev {
+    right: calc(50% + 80px); /* Position relative to center */
+}
+
+.solutions-button-next {
+    left: calc(50% + 80px); /* Position relative to center */
+}
+
+@media (max-width: 768px) {
+
+    .solutions-button-prev img,
+    .solutions-button-next img {
+        width: 25px; /* Slightly smaller on mobile */
+    }
+
+    .solutions-button-prev {
+        right: 100%;/* Closer on mobile */
+    }
+
+    .solutions-button-next {
+        left: 57%; /* Closer on mobile */
+    }
+
+    .solutions-pagination {
+        font-size: 1rem;
+        /* bottom: 20%; */
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-section h2 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .solution-slide {
+        padding: 2rem 1.5rem; 
+    }
+
+    .solution-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .solution-content ul {
+        margin-bottom: 60px; /* Make space for the button */
+    }
+
+    .solution-content li {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .solution-content li:last-child {
+        padding-right: 1rem; /* Reset the large padding */
+    }
+
+    .solution-content .button {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        margin-top: 5rem;
+
+        height: auto;
+    }
+
+    .solutions-slider {
+        padding: 0 1rem;
+        height: 100%;
+    }
+
 }

@@ -326,6 +326,7 @@ const solutionsSwiper = new Swiper('.solutions-swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: false,
+    speed: 800,
     navigation: {
         nextEl: '.solutions-button-next',
         prevEl: '.solutions-button-prev',
@@ -345,15 +346,32 @@ const solutionsSwiper = new Swiper('.solutions-swiper', {
                    '<span class="' + totalClass + '"></span>';
         }
     },
+    effect: 'slide',
+    followFinger: true,
+    allowTouchMove: true,
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+    slideToClickedSlide: false,
 });
 
-// Add click handlers for the navigation arrows
-document.querySelector('.solutions-button-prev').addEventListener('click', () => {
-    solutionsSwiper.slidePrev();
-});
-document.querySelector('.solutions-button-next').addEventListener('click', () => {
-    solutionsSwiper.slideNext();
-});
+// Remove any duplicate event listeners
+const prevSolutionBtn = document.querySelector('.solutions-button-prev');
+const nextSolutionBtn = document.querySelector('.solutions-button-next');
+
+if (prevSolutionBtn && nextSolutionBtn) {
+    // Clean up old listeners
+    prevSolutionBtn.replaceWith(prevSolutionBtn.cloneNode(true));
+    nextSolutionBtn.replaceWith(nextSolutionBtn.cloneNode(true));
+    
+    // Add new listeners
+    document.querySelector('.solutions-button-prev').addEventListener('click', () => {
+        solutionsSwiper.slidePrev();
+    });
+    
+    document.querySelector('.solutions-button-next').addEventListener('click', () => {
+        solutionsSwiper.slideNext();
+    });
+}
 
 // Mobile dropdown functionality
 document.addEventListener('DOMContentLoaded', function() {
