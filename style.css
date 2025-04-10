@@ -2357,7 +2357,7 @@ footer::after {
 .solution-content .button {
     position: absolute;
     bottom: 0;
-    left: 50%;
+    right: 0;
     transform: translateX(-50%);
     margin: 0;
     margin-top: 5rem;
@@ -2374,7 +2374,7 @@ footer::after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    padding: 2rem 0;
+    padding: 2.5rem 0;
 }
 
 .solutions-pagination .swiper-pagination-bullet {
@@ -2633,7 +2633,7 @@ footer::after {
     position: absolute;
     top: 60%;
     left: 35%;
-    transform: translateY(-80%);
+    transform: translateY(-70%);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -2645,11 +2645,11 @@ footer::after {
 }
 
 .solutions-button-prev {
-    right: calc(50% + 80px); /* Position relative to center */
+    right: 60%;
 }
 
 .solutions-button-next {
-    left: calc(50% + 80px); /* Position relative to center */
+    left: 60%
 }
 
 @media (max-width: 768px) {
