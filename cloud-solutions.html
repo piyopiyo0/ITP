@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>ITP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="blur-overlay"></div>
+    <nav class="navbar">
+        <svg class="navbar-border" xmlns="http://www.w3.org/2000/svg" viewBox="-0.1 -0.1 50.2 4.2">
+            <path d="M 0 0 L 0 0 H 50 V 3 H 37 L 35 4 L 15 4 L 13 3 L 0 3 L 0 0" stroke="#43ffff" stroke-width="0.1" fill="none"/>
+        </svg>
+        <div class="nav-wrapper">
+            <div class="navbar-content">
+                <div class="nav-brand">
+                    <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+                </div>
+                <div class="nav-links">
+                    <a href="about.html">О компании</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#solutions" class="dropdown-trigger">Решения</a>
+                    <a href="#partners">Партнеры</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                
+                <div class="navbar-right">
+                    <div class="nav-phone">
+                        <span>+7 701 541 32 81</span>
+                    </div>
+                    
+                    <button class="mobile-menu-btn">
+                        <div class="burger-icon"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="hardware.html">Аппаратное обеспечение</a>
+                    <a href="software.html">Программное обеспечение</a>
+                    <a href="it-services.html">IT-услуги</a>
+                    <a href="cloud-solutions.html">Облачные решения</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <a href="about.html">О компании</a>
+        <a href="#services">Услуги</a>
+        <div class="mobile-dropdown">
+            <a href="#solutions" class="mobile-dropdown-toggle">
+                <span>Решения</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="hardware.html">
+                    <span>Аппаратное обеспечение</span>
+                </a>
+                <a href="software.html">
+                    <span>Программное обеспечение</span>
+                </a>
+                <a href="it-services.html">
+                    <span>IT-услуги</span>
+                </a>
+                <a href="cloud-solutions.html">
+                    <span>Облачные решения</span>
+                </a>
+            </div>
+        </div>
+        <a href="#partners">Партнеры</a>
+        <a href="contacts.html">Контакты</a>
+        <div class="mobile-phone">
+            <i class="fas fa-phone"></i>
+            <span>+7 701 541 32 81</span>
+        </div>
+    </div>
+
+    <main>
+        <section class="cloud-solutions-hero"></section>
+
+        <section class="cloud-solutions-accordion">
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <h3>Виртуальные серверы и хранилища</h3>
+                    <h5>Облачные серверы для эффективной работы</h5>
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <p>Мы предоставляем виртуальные серверы и облачные хранилища данных, которые позволяют эффективно хранить, обрабатывать и защищать информацию.</p>
+                        <ol>
+                            <li>Виртуальные серверы: Настройка и управление облачными виртуальными серверами, которые легко масштабируются в зависимости от потребностей вашего бизнеса.</li>
+                            <li>
+                                Облачные хранилища данных: Надежные и безопасные решения для хранения больших объемов данных с возможностью быстрого доступа и высокой доступности.
+                            </li>
+                            <li>
+                                Гибкость и масштабируемость: Вы можете масштабировать ресурсы, добавлять дополнительные мощности или хранилище по мере роста бизнеса.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <h3>SAAS-решения</h3>
+                    <h5>Программное обеспечение как услуга</h5>
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <p>Предлагаем широкий выбор SAAS-решений, которые позволяют использовать ПО через интернет, без необходимости установки и управления локальными серверами.</p>
+                        <ol>
+                            <li>
+                                Офисные приложения: Доступ к популярным офисным пакетам, таким как Microsoft 365 или Google Workspace для эффективной работы вашей команды.
+                            </li>
+                            <li>
+                                Управление бизнесом: Облачные решения для управления бизнес-процессами, включая CRM-системы, ERP-системы и другие инструменты для автоматизации.
+                            </li>
+                            <li>
+                                Низкие затраты и высокая доступность: Использование облачных сервисов позволяет снизить затраты на лицензии и обслуживание ПО, а также обеспечивает доступность приложений из любого места.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                    <h3>Резервное копирование</h3>
+                    <h5>Защита данных и восстановление</h5>
+                </div>
+                <div class="accordion-item-body">
+                    <div class="accordion-item-body-content">
+                        <p>Мы предлагаем решения для регулярного резервного копирования данных и восстановления информации в случае сбоев, чтобы обеспечить безопасность и бесперебойную работу вашего бизнеса.</p>
+                        <ol>
+                            <li>
+                                Автоматическое резервное копирование: Настройка регулярного резервного копирования всех критичных данных, включая базы данных, документы и файлы.
+                            </li>
+                            <li>
+                                Восстановление данных: Быстрое восстановление данных после потери, сбоя или катастрофы, минимизируя время простоя и потери данных.
+                            </li>
+                            <li>
+                                Безопасность и доступность: Использование облачных сервисов для хранения резервных копий обеспечивает дополнительную защиту данных и доступность в любой момент.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+<section class="contact-form">
+    <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+    <p>Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+    <form id="consultation-form">
+        <div class="inputs-row">
+            <div class="form-group">
+                <input type="text" placeholder="ФИО" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Телефон" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="message">
+            <textarea placeholder="Сообщение" required></textarea>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="agreement" name="agreement" required>
+            <label for="agreement">Я принимаю условия <a href="#">политики конфиденциальности</a></label>
+        </div>
+        <button class="button">
+            <span class="button-text">Отправить</span>
+            <span class="button-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </button>
+    </form>
+</section>
+</main>
+
+<footer>
+<div class="footer-content">
+    <div class="footer-column">
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav class="footer-nav">
+            <a href="#home">О компании</a>
+            <a href="#about">Услуги</a>
+            <a href="#services">Решения</a>
+            <a href="#partners">Партнеры</a>
+            <a href="/pages/contacts.html">Контакты</a>
+        </nav>
+    </div>
+
+    <div class="footer-column">
+        <h4>Телефон:</h4>
+        <div class="footer-contacts">
+            <div class="contact-item">
+                <a href="tel:+77026798545">+7 702 679 85 45</a>
+            </div>
+            <div class="contact-item">
+                <a href="tel:+77085004596">+7 708 500 45 96</a>
+            </div>
+            <div class="contact-time">
+                <p>Время работы:</p>
+                <p>Пн-Пт: 9:00 - 18:00</p>
+                <p>Сб - Вс: выходные</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-column">
+        <div class="contact-item">
+            <span class="label">Email:</span>
+            <a href="mailto:info@itp.kz">info@itp.kz</a>
+        </div>
+        <div class="contact-item address">
+            <span class="label">Адрес:</span>
+            <p>050057, г. Алматы, Казахстан, 
+                ул. Тимирязева, 42/15</p>
+        </div>
+    </div>
+</div>
+</footer>
+
+<!-- Popup Form -->
+<div class="popup-overlay" id="popupOverlay">
+<div class="popup-content">
+    <button class="close-popup" id="closePopup">×</button>
+    
+    <!-- Form Content -->
+    <div class="form-content" id="formContent">
+        <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+        <p class="popup-subtitle">Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+        <form id="consultationForm" class="popup-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="ФИО">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я принимаю условия <a href="#" class="agreement-link">политики конфиденциальности</a></label>
+                </div>
+            </div>
+            <button type="submit" class="button">
+                <span class="button-text">Отправить</span>
+                <span class="button-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Success Message (initially hidden) -->
+    <div class="success-content" id="successContent" style="display: none;">
+        <h2>СПАСИБО ЗА ЗАЯВКУ!</h2>
+        <p class="popup-subtitle">Мы свяжемся с вами в ближайшее время</p>
+    </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html> 
