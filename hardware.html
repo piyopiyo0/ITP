@@ -10,47 +10,46 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
     </head>
     <body>
         <div class="blur-overlay"></div>
-    
         <nav class="navbar">
             <svg class="navbar-border" xmlns="http://www.w3.org/2000/svg" viewBox="-0.1 -0.1 50.2 4.2">
                 <path d="M 0 0 L 0 0 H 50 V 3 H 37 L 35 4 L 15 4 L 13 3 L 0 3 L 0 0" stroke="#43ffff" stroke-width="0.1" fill="none"/>
             </svg>
-            <div class="navbar-content">
-                <div class="nav-brand">
-                    <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
-                </div>
-                
-                <div class="nav-links">
-                    <a href="about.html">О компании</a>
-                    <a href="#services">Услуги</a>
-                    <div class="dropdown">
-                        <a href="#solutions">Решения</a>
-                        <div class="dropdown-content">
-                            <a href="hardware.html">Аппаратное обеспечение</a>
-                            <a href="software.html">Программное обеспечение</a>
-                            <a href="it-services.html">IT-услуги</a>
-                            <a href="cloud-solutions.html">Облачные решения</a>
-                        </div>
+            <div class="nav-wrapper">
+                <div class="navbar-content">
+                    <div class="nav-brand">
+                        <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
                     </div>
-                    <a href="#partners">Партнеры</a>
-                    <a href="contacts.html">Контакты</a>
-                </div>
-                
-                <div class="navbar-right">
-                    <div class="nav-phone">
-                        <span>+7 701 541 32 81</span>
+                    <div class="nav-links">
+                        <a href="about.html">О компании</a>
+                        <a href="#services">Услуги</a>
+                        <a href="#solutions" class="dropdown-trigger">Решения</a>
+                        <a href="#partners">Партнеры</a>
+                        <a href="contacts.html">Контакты</a>
                     </div>
                     
-                    <button class="mobile-menu-btn">
-                        <div class="burger-icon"></div>
-                    </button>
+                    <div class="navbar-right">
+                        <div class="nav-phone">
+                            <span>+7 701 541 32 81</span>
+                        </div>
+                        
+                        <button class="mobile-menu-btn">
+                            <div class="burger-icon"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-content">
+                        <a href="hardware.html">Аппаратное обеспечение</a>
+                        <a href="software.html">Программное обеспечение</a>
+                        <a href="it-services.html">IT-услуги</a>
+                        <a href="cloud-solutions.html">Облачные решения</a>
+                    </div>
                 </div>
             </div>
-            
+    
         </nav>
     
         <div class="mobile-menu">
@@ -109,6 +108,240 @@
                     </div>
                 </div>
             </section>
-        </main>
 
+            <!-- Accordion  -->
+            <section class="hardware__accordion">
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <h3>Серверы и системы хранения данных</h3>
+                        <h5>Решения для корпоративных клиентов</h5>
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            <p>Для предприятий мы предлагаем высокопроизводительные серверы и системы хранения данных, которые обеспечат надежную и безопасную работу вашей IT-инфраструктуры.</p>
+                            <ol>
+                                <li>Серверы: Мы предлагаем решения для любых нужд, от небольших серверов для локальных офисов до мощных дата-центров.</li>
+                                <li>Системы хранения данных. Мы предлагаем сетевые хранилища NAS и системы хранения данных SAN.</li>
+                                <li>Серверные аксессуары. Мы поставляем различные аксессуары для серверных решений, необходимые для повышения производительности системы.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <h3>Персональные компьютеры и ноутбуки</h3>
+                        <h5>Поставка современных моделей</h5>
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            <p>Мы предлагаем персональные компьютеры и ноутбуки от ведущих мировых производителей, подходящие для любых задач: от офисной работы до сложных инженерных решений.</p>
+                            <ol>
+                                <li>Dell — Персональные компьютеры и ноутбуки с высоким уровнем производительности и надежности.</li>
+                                <li>HP — Инновационные и высококачественные решения для бизнеса с фокусом на безопасность и долговечность.</li>
+                                <li>Lenovo — Известный бренд, который предлагает как рабочие станции, так и ноутбуки с высокой производительностью и отличным дизайном.</li>
+                                <li>Другие бренды — В зависимости от ваших требований, мы можем предложить продукцию от других мировых лидеров, таких как Acer, Asus, Microsoft Surface и тд.</li>
+                            </ol>
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-item-header">
+                        <h3>Сетевое оборудование</h3>
+                        <h5>Для надежной IT-инфраструктуры</h5>
+                    </div>
+                    <div class="accordion-item-body">
+                        <div class="accordion-item-body-content">
+                            <p>Наши решения для построения и обслуживания IT-инфраструктуры обеспечат вам стабильную и защищенную работу сети.</p>
+                            <ol>
+                                <li>Маршрутизаторы и коммутаторы: Мы поставляем решения от ведущих производителей, которые обеспечат стабильную работу вашей сети.</li>
+                                <li>Точки доступа Wi-Fi: Поставляем высокоскоростные точки доступа для организации корпоративной сети с поддержкой последних стандартов безопасности.</li>
+                                <li>Файрволы и безопасность: Мы предлагаем устройства для защиты вашей сети от внешних угроз и другие решения для защиты информации.</li>
+                                <li>Оптоволоконные решения: Поставка оборудования для построения высокоскоростных оптоволоконных сетей.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+
+            <section class="why-us">
+                <div class="why-us-grid">
+                    <!-- First row -->
+                    <div class="section-header">
+                        <h2>ПОЧЕМУ<br>ВЫБИРАЮТ НАС?</h2>
+                    </div>
+                    <div class="info-block">
+                        <h3>ТЕХНОЛОГИИ И ОПЫТ</h3>
+                        <p>Мы 10 лет на рынке, сотрудничаем с более чем 200 компаниями по всему миру и успешно реализовали более 500 проектов.</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>ГЛОБАЛЬНОЕ ПРИСУТСТВИЕ</h3>
+                        <p>Мы успешно работаем в Украине, Казахстане и в странах Европейского Союза, предоставляя высококачественный сервис и поддержку.</p>
+                    </div>
+    
+                    <!-- Second row -->
+                    <div class="info-block">
+                        <h3>ИНДИВИДУАЛЬНЫЙ ПОДХОД</h3>
+                        <p>Наши эксперты готовы предложить персонализированные консультации, чтобы выбрать идеальные решения для вашего бизнеса и ответить на все вопросы.</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>ТЕСТИРОВАНИЕ ОБОРУДОВАНИЯ</h3>
+                        <p>Мы предоставляем возможность тестирования оборудования, чтобы вы могли убедиться в его эффективности и соответствии вашим требованиям перед покупкой.</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>ГИБКИЕ ФИНАНСОВЫЕ РЕШЕНИЯ</h3>
+                        <p>Мы предоставляем индивидуальные условия оплаты, чтобы наши клиенты могли оптимизировать свои затраты и гибко адаптировать технологии под свои нужды.</p>
+                    </div>
+    
+                    <!-- Third row -->
+                    <div class="info-block">
+                        <h3>РАСШИРЕННЫЕ ГАРАНТИИ</h3>
+                        <p>Мы предлагаем возможность продления гарантийного срока на 1-2 года по сравнению с стандартным сроком изготовителя.</p>
+                    </div>
+                    <div class="empty-block"></div>
+                    <div class="info-block">
+                        <h3>ДОСТАВКА ПО ВСЕЙ СТРАНЕ</h3>
+                        <p>Мы обеспечиваем быструю и надежную доставку по всей территории Казахстана, гарантируя комфорт и оперативность при получении вашего заказа.</p>
+                    </div>
+                </div>
+            </section>
+
+        <section class="contact-form">
+            <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+            <p>Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+            <form id="consultation-form">
+                <div class="inputs-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="ФИО" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="message">
+                    <textarea placeholder="Сообщение" required></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я принимаю условия <a href="#">политики конфиденциальности</a></label>
+                </div>
+                <button class="button">
+                    <span class="button-text">Отправить</span>
+                    <span class="button-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Logo">
+                </div>
+                <nav class="footer-nav">
+                    <a href="#home">О компании</a>
+                    <a href="#about">Услуги</a>
+                    <a href="#services">Решения</a>
+                    <a href="#partners">Партнеры</a>
+                    <a href="/pages/contacts.html">Контакты</a>
+                </nav>
+            </div>
+
+            <div class="footer-column">
+                <h4>Телефон:</h4>
+                <div class="footer-contacts">
+                    <div class="contact-item">
+                        <a href="tel:+77026798545">+7 702 679 85 45</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+77085004596">+7 708 500 45 96</a>
+                    </div>
+                    <div class="contact-time">
+                        <p>Время работы:</p>
+                        <p>Пн-Пт: 9:00 - 18:00</p>
+                        <p>Сб - Вс: выходные</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <div class="contact-item">
+                    <span class="label">Email:</span>
+                    <a href="mailto:info@itp.kz">info@itp.kz</a>
+                </div>
+                <div class="contact-item address">
+                    <span class="label">Адрес:</span>
+                    <p>050057, г. Алматы, Казахстан, 
+                        ул. Тимирязева, 42/15</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup Form -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <button class="close-popup" id="closePopup">×</button>
+            
+            <!-- Form Content -->
+            <div class="form-content" id="formContent">
+                <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+                <p class="popup-subtitle">Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+                <form id="consultationForm" class="popup-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder="ФИО">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            <label for="agreement">Я принимаю условия <a href="#" class="agreement-link">политики конфиденциальности</a></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="button">
+                        <span class="button-text">Отправить</span>
+                        <span class="button-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Success Message (initially hidden) -->
+            <div class="success-content" id="successContent" style="display: none;">
+                <h2>СПАСИБО ЗА ЗАЯВКУ!</h2>
+                <p class="popup-subtitle">Мы свяжемся с вами в ближайшее время</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+        
     </body>
+</html>

@@ -34,12 +34,11 @@ document.addEventListener('keydown', function(e) {
 // Handle menu item clicks
 dropdownContent.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        // Add your navigation logic here
+        // Close the dropdown
         dropdownContent.classList.remove('active');
         navbar.classList.remove('dropdown-active');
         blurOverlay.style.display = 'none';
+        
     });
 });
 

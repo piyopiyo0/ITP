@@ -3,39 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="blur-overlay"></div>
     <nav class="navbar">
         <svg class="navbar-border" xmlns="http://www.w3.org/2000/svg" viewBox="-0.1 -0.1 50.2 4.2">
             <path d="M 0 0 L 0 0 H 50 V 3 H 37 L 35 4 L 15 4 L 13 3 L 0 3 L 0 0" stroke="#43ffff" stroke-width="0.1" fill="none"/>
         </svg>
-        <div class="navbar-content">
-            <div class="nav-brand">
-                <img src="/images/logo.png" alt="Logo" class="logo">
-            </div>
-            
-            <div class="nav-links">
-                <a href="#home">О компании</a>
-                <a href="#services">Услуги</a>
-                <a href="#solutions">Решения</a>
-                <a href="#partners">Партнеры</a>
-                <a href="#contact">Контакты</a>
-            </div>
-            
-            <div class="navbar-right">
-                <div class="nav-phone">
-                    <span>+7 701 541 32 81</span>
+        <div class="nav-wrapper">
+            <div class="navbar-content">
+                <div class="nav-brand">
+                    <a href="index.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+                </div>
+                <div class="nav-links">
+                    <a href="about.html">О компании</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#solutions" class="dropdown-trigger">Решения</a>
+                    <a href="#partners">Партнеры</a>
+                    <a href="contacts.html">Контакты</a>
                 </div>
                 
-                <button class="mobile-menu-btn">
-                    <div class="burger-icon"></div>
-                </button>
+                <div class="navbar-right">
+                    <div class="nav-phone">
+                        <span>+7 701 541 32 81</span>
+                    </div>
+                    
+                    <button class="mobile-menu-btn">
+                        <div class="burger-icon"></div>
+                    </button>
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-content">
+                    <a href="hardware.html">Аппаратное обеспечение</a>
+                    <a href="software.html">Программное обеспечение</a>
+                    <a href="it-services.html">IT-услуги</a>
+                    <a href="cloud-solutions.html">Облачные решения</a>
+                </div>
             </div>
         </div>
+
     </nav>
+
+    <div class="mobile-menu">
+        <a href="about.html">О компании</a>
+        <a href="#services">Услуги</a>
+        <div class="mobile-dropdown">
+            <a href="#solutions" class="mobile-dropdown-toggle">
+                <span>Решения</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-content">
+                <a href="hardware.html">
+                    <span>Аппаратное обеспечение</span>
+                </a>
+                <a href="software.html">
+                    <span>Программное обеспечение</span>
+                </a>
+                <a href="it-services.html">
+                    <span>IT-услуги</span>
+                </a>
+                <a href="cloud-solutions.html">
+                    <span>Облачные решения</span>
+                </a>
+            </div>
+        </div>
+        <a href="#partners">Партнеры</a>
+        <a href="contacts.html">Контакты</a>
+        <div class="mobile-phone">
+            <i class="fas fa-phone"></i>
+            <span>+7 701 541 32 81</span>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -82,5 +124,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></script>
+    <script src="script.js"></script>
 </body>
 </html>
