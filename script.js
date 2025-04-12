@@ -3,7 +3,7 @@ const dropdown = document.querySelector('.dropdown');
 const dropdownContent = document.querySelector('.dropdown-content');
 const navbar = document.querySelector('.navbar');
 const blurOverlay = document.querySelector('.blur-overlay');
-const dropdownLink = dropdown.querySelector('a');
+const dropdownLink = document.querySelector('.dropdown-trigger');
 
 // Handle dropdown click
 dropdownLink.addEventListener('click', function(e) {
@@ -15,7 +15,7 @@ dropdownLink.addEventListener('click', function(e) {
 
 // Close dropdown when clicking outside
 document.addEventListener('click', function(e) {
-    if (!dropdown.contains(e.target)) {
+    if (!dropdown.contains(e.target) && dropdownLink !== e.target) {
         dropdownContent.classList.remove('active');
         navbar.classList.remove('dropdown-active');
         blurOverlay.style.display = 'none';
