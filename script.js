@@ -196,10 +196,7 @@ const partnersSwiper = new Swiper('.partners-swiper', {
     spaceBetween: 30,
     loop: true,
     speed: 800,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    autoplay: false,
     navigation: {
         prevEl: '.custom-next',
         nextEl: '.custom-prev',
@@ -386,10 +383,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionItems = document.querySelectorAll('.accordion-item');
 
-document.querySelectorAll('.accordion-item-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const accordionItem = header.parentElement;
-        accordionItem.classList.toggle('active');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-item-header');
+        const body = item.querySelector('.accordion-item-body');
+        const toggleBtn = item.querySelector('.accordion-toggle-btn');
+
+        // Initially hide all accordion bodies
+        if (!item.classList.contains('active')) {
+            body.style.display = 'none';
+        }
+
+        header.addEventListener('click', (e) => {
+            // Prevent click event if clicking on the button
+            if (e.target === toggleBtn || toggleBtn.contains(e.target)) {
+                return;
+            }
+            toggleAccordion(item);
+        });
+
+        // Separate event listener for the button
+        toggleBtn.addEventListener('click', () => {
+            toggleAccordion(item);
+        });
     });
+
+    function toggleAccordion(clickedItem) {
+        const body = clickedItem.querySelector('.accordion-item-body');
+        const isActive = clickedItem.classList.contains('active');
+
+        // Close all other accordion items
+        accordionItems.forEach(item => {
+            if (item !== clickedItem && item.classList.contains('active')) {
+                item.classList.remove('active');
+                item.querySelector('.accordion-item-body').style.display = 'none';
+            }
+        });
+
+        // Toggle current item
+        if (!isActive) {
+            clickedItem.classList.add('active');
+            body.style.display = 'block';
+        } else {
+            clickedItem.classList.remove('active');
+            body.style.display = 'none';
+        }
+    }
 });

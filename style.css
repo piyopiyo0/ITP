@@ -1864,7 +1864,7 @@ footer::after {
 
 .swiper-slide:hover .color-logo {
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.3); */
 }
 
 /* Navigation arrows */
@@ -1917,6 +1917,7 @@ footer::after {
     .swiper-slide img {
         max-width: 150px;
         height: 80px;
+        z-index: -1;
     }
 
     .custom-prev, .custom-next {
@@ -2321,6 +2322,11 @@ footer::after {
     flex-direction: column;
     gap: 2rem;
     height: 100%;
+}
+
+.solution-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .solution-content h3 {
@@ -2742,13 +2748,16 @@ footer::after {
 
 }
 
+.accordion {
+    margin-top: 5%;
+}
 
 .accordion-item-header {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 1.5rem 2rem;
+    padding: 2rem;
 
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -2759,79 +2768,169 @@ footer::after {
     top: 0;
 }
 
+
+/* Container for background transitions */
 .accordion-item-header-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    width: 100%;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-item-header-content h3 {
+    font-size: 30px;
+}
+
+.accordion-item-header-content h5 {
+    font-size: 15px;
+    color: var(--primary-color);
+}
+
+/* Base background (closed state) */
+.accordion-item-header-content::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/accordion-rectangle-closed.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+
+}
+
+/* Active state background */
+.accordion-item-header-content::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('images/accordion-rectangle-title.png');
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100%;
-    /* height: 150px; */
-    padding: 4rem; 
+    background-position: left;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
 }
 
-.accordion-item-header-content h3, h5 {
+/* Ensure content stays above backgrounds */
+.accordion-item-header-content > * {
     position: relative;
-    top: -25px;
+    z-index: 3;
 }
 
-.accordion-item-header h3 {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    margin: 0;
+/* Active state transitions */
+.accordion-item.active .accordion-item-header-content::before {
+    opacity: 0;
 }
 
-.accordion-item-header-content-right {
+.accordion-item.active .accordion-item-header-content::after {
+    opacity: 1;
+}
+
+/* Open state */
+/* .accordion-item.active .accordion-item-header-content {
+    background-image: url('images/accordion-rectangle-title.png');
+    background-repeat: no-repeat;
+} */
+
+/* Button default state (closed) */
+.accordion-toggle-btn {
+    width: 95px;
+    height: 95px;
+    min-width: 95px;
+    background-color: var(--primary-color);
+    /* background-image: url('images/arrow-white-icon.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
     position: relative;
     right: 0;
-    padding-left: 10px;
-
+    top: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    /* Cropped right bottom angle */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    
 }
 
-.accordion-toggle-btn {
+.accordion-toggle-btn::after {
+    content: '';
+    width: 20px; /* Bigger arrow for closed state */
+    height: 20px;
+    background-image: url('images/arrow-cyan-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* transform: rotate(90deg); */
+    transition: all 0.3s ease;
+    top: 30%;
+}
+
+/* Open state - smaller button */
+.accordion-item.active .accordion-toggle-btn {
     width: 58px;
     height: 58px;
     min-width: 58px;
     background-color: var(--primary-color);
     border: none;
-    cursor: pointer;
-    position: relative;
-    right: 0;
-    top: 20%;
-    /* margin-left: 10px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    clip-path: none; /* Remove the cropped angle */
 }
 
-.accordion-toggle-btn::after {
-    content: '';
-    width: 14px;
-    height: 14px;
-    background-image: url('images/arrow.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.3s ease;
-}
-
-/* When accordion is open */
 .accordion-item.active .accordion-toggle-btn::after {
-    transform: rotate(90deg);
+    width: 14px; /* Smaller arrow for open state */
+    height: 14px;
+    background-image: url('images/arrow-white-icon.png');
+    transform: rotate(-90deg);
 }
 
 /* Hover effects */
-
-
 .accordion-toggle-btn:hover {
-    border: 1px solid var(--text-color);
+    background-color: var(--primary-color);
 }
 
 .accordion-toggle-btn:hover::after {
-    filter: brightness(0) invert(1);
+    background-image: url('images/arrow-white-icon.png');
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .accordion-toggle-btn {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+
+    .accordion-toggle-btn::after {
+        width: 16px;
+        height: 16px;
+    }
+
+    .accordion-item.active .accordion-toggle-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .accordion-item.active .accordion-toggle-btn::after {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 .accordion-item-body {
@@ -2977,3 +3076,33 @@ footer::after {
         height: 12px;
     }
 } */
+
+/* Default state for all text elements */
+h1, h2, h3, h4, h5, h6, p, li, span, a:not(.button), 
+.nav-links a, .footer-nav a, .stat-label, 
+.service-card p, .info-block p,
+.accordion-item-body-content p,
+.contact-form p, .popup-form label,
+.footer-contacts p, .mobile-dropdown-content a {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover states */
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover, li:hover, span:hover, a:not(.button):hover,
+.nav-links a:hover, .footer-nav a:hover, .stat-label:hover,
+.service-card:hover p, .info-block:hover p,
+.accordion-item-body-content li:hover p,
+.contact-form p:hover, .popup-form label:hover,
+.footer-contacts p:hover, .mobile-dropdown-content a:hover {
+    opacity: 1;
+}
+
+/* Keep certain elements at full opacity always */
+.button, .button *, 
+.stat-number,
+.primary-color,
+.highlight {
+    opacity: 1 !important;
+}
