@@ -3091,6 +3091,7 @@ footer::after {
         position: relative;
         top: -10px;
         margin: 0 auto;
+        height: 100vh;
     }
 
     .accordion-item-body-content {
