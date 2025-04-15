@@ -114,6 +114,8 @@
         align-items: center;
         justify-content: center;
         row-gap: 2rem;
+        position: relative;
+        bottom: -52vh;
     }
 
     .about__subtitle {
@@ -137,12 +139,28 @@
 
 @media (max-width: 1024px) {
     .about__hero-content {
-        max-height: 50vh !important;
+        max-height: 50vh;
         background-size: contain;
     }
 }
 
 @media (max-width: 768px) {
+
+    .hero-top h1 {
+        font-size: 1.5rem;
+    }
+
+    .about__hero-content {
+        max-height: 80vh;
+        background-size: contain;
+    }
+
+    .hero-bottom-left p {
+        margin-top: 15%;
+        opacity: 0.9;
+    }
+
+
     .about__subtitle {
         padding: 2rem;
         padding-top: 5rem;
