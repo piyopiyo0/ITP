@@ -832,12 +832,23 @@ h1, h2, h3, .stat-number {
     letter-spacing: 0.5px;
 }
 
+.contact-form {
+    margin: 0 auto;
+}
+
+.contact-form h2 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    padding-left: 1rem;
+}
+
 .contact-form p {
     font-family: var(--font-primary);
     font-weight: 300;
     letter-spacing: 0.5px;
     font-size: 1.2rem;
     margin-top: 1rem;
+    padding-left: 1rem;
 }
 
 .contact-form a {
@@ -1263,7 +1274,7 @@ footer::after {
     background-position: center;
     background-repeat: no-repeat;
     max-width: 1200px;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .about-section::before {
@@ -1842,7 +1853,7 @@ footer::after {
     }
 
     .info-block {
-        padding: 2rem;
+        padding: 1rem;
     }
 
     .info-block h3 {
@@ -1850,7 +1861,8 @@ footer::after {
     }
 
     .info-block p {
-        font-size: 0.5rem !important;
+        font-size: 0.8rem !important;
+        padding: 0;
     }
 
 }
@@ -1876,13 +1888,13 @@ footer::after {
     overflow: hidden;
 }
 
-.swiper-wrapper {
+.partners-section .swiper-wrapper {
     display: flex;
     align-items: flex-start;
     height: 100px;
 }
 
-.swiper-slide {
+.partners-section .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -3091,7 +3103,7 @@ footer::after {
         position: relative;
         top: -10px;
         margin: 0 auto;
-        height: 100vh;
+        height: 150vh;
     }
 
     .accordion-item-body-content {
@@ -3298,4 +3310,159 @@ p:hover, li:hover, span:hover, a:not(.button):hover,
 .primary-color,
 .highlight {
     opacity: 1 !important;
+}
+
+
+.contacts-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contacts-wrapper {
+    display: flex;
+    gap: 60px;
+}
+
+.contacts-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.contacts-content {
+    flex-grow: 1;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.contact-item h3 {
+    color: #666;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.contact-item p {
+    color: #fff;
+    margin-bottom: 8px;
+    opacity: 0.8;
+    font-size: 16px;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .contacts-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.contacts-bottom {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 5%;
+}
+
+.contacts-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive design addition */
+@media (max-width: 768px) {
+    .contacts-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contacts-image {
+        order: -1; /* Places image above button on mobile */
+    }
+}
+
+
+.cta-section {
+    flex: 1; /* Takes one third */
+}
+
+.contacts-image {
+    flex: 2; /* Takes two thirds */
+    height: 280px;
+    overflow: hidden;
+}
+
+.contacts-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will crop the image while maintaining aspect ratio */
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #43ffff;
+    color: #43ffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    background-color: #43ffff;
+    color: #000;
+}
+
+@media (max-width: 1200px) {
+    .contacts-bottom {
+        flex-direction: column-reverse;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    
+    .contacts-image {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .contacts-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        /* object-position: bottom; */
+    }
+}
+/* Responsive design addition */
+@media (max-width: 768px) {
+    .contacts-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contacts-image {
+        width: 100%;
+        order: -1; /* Places image above button on mobile */
+    }
+    
+    .cta-section {
+        width: 100%;
+    }
+
+    .contacts-button-container button {
+        width: 90vw;
+        margin-top: 2rem;
+    }
 }

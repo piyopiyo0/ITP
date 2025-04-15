@@ -135,13 +135,21 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .about__hero-content {
+        max-height: 50vh !important;
+        background-size: contain;
+    }
+}
+
 @media (max-width: 768px) {
     .about__subtitle {
         padding: 2rem;
         padding-top: 5rem;
     }
     .about__subtitle h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        max-width: 100%;
     }
     .about__subtitle-content {
         flex-direction: column;
@@ -261,18 +269,19 @@
 
 @media (max-width: 1024px) {
     .achievements {
-        padding: 2rem;
+        padding: 5%;
         padding-top: 5rem;
+        margin: 0 auto;
         margin-bottom: 5rem;
     }
 
     .achievement__title {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .achievement__description {
-        font-size: 1rem;
-        margin-left: 5%;
+        font-size: 0.8rem;
+        padding-left: 5%;
     }
 }
 

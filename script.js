@@ -208,12 +208,12 @@ const partnersSwiper = new Swiper('.partners-swiper', {
             spaceBetween: 20,
         },
         // Tablet - 3 slides
-        768: {
+        769: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 15,
         },
         // Desktop - 4 slides
-        1024: {
+        1025: {
             slidesPerView: 4,
             spaceBetween: 40,
         }
