@@ -92,7 +92,7 @@
                             <h1>ВАШ БИЗНЕС.<br>НАШИ ТЕХНОЛОГИИ.<br><span class="highlight">НОВЫЕ ВОЗМОЖНОСТИ.</span></h1>
                             <p>Мы разрабатываем и внедряем инновационные IT-решения для роста и масштабирования бизнеса.</p>
 
-                            <button class="button">
+                            <button class="button popup-button">
                                 <span class="button-text">Получить консультацию</span>
                                 <span class="button-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -130,17 +130,15 @@
             <div class="about-description">
                 Компания была основана в 2015 году в Киеве. На сегодняшний день работает на рынках Украины, Европейского Союза (ЕС) и Казахстана.
             </div>
-        </section>
-        <div class="cta-container">
-            <button class="button btn-centered">
+            <a href="about.html" class="button btn-centered">
                 <span class="button-text">Подробнее</span>
                 <span class="button-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-              </button>
-          </div>
+            </a>
+        </section>
 
         <!-- SERVICES START -->
 
@@ -175,7 +173,7 @@
           
               <!-- CTA Button -->
               <div class="cta-container">
-                <button class="button">
+                <button class="button popup-button">
                     <span class="button-text">Получить консультацию</span>
                     <span class="button-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -367,14 +365,14 @@
                                     <li>Серверы и системы хранения данных</li>
                                     <li>Сетевое оборудование</li>
                                 </ul>
-                                <button class="button">
+                                <a href="hardware.html" class="button">
                                     <span class="button-text">Подробнее</span>
                                     <span class="button-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -391,14 +389,14 @@
                                     <li>Бизнес-программы</li>
                                     <li>Антивирусное и безопасное ПО</li>
                                 </ul>
-                                <button class="button">
+                                <a href="software.html" class="button">
                                     <span class="button-text">Подробнее</span>
                                     <span class="button-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -411,14 +409,14 @@
                                     <li>Установка и настройка</li>
                                     <li>Поддержка и обслуживание</li>
                                 </ul>
-                                <button class="button">
+                                <a href="it-services.html" class="button">
                                     <span class="button-text">Подробнее</span>
                                     <span class="button-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         </div>
 
@@ -435,14 +433,14 @@
                                     <li>SaaS-решения</li>
                                     <li>Резервное копирование и восстановление</li>
                                 </ul>
-                                <button class="button">
+                                <a href="cloud-solutions.html" class="button">
                                     <span class="button-text">Подробнее</span>
                                     <span class="button-icon">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -583,16 +581,27 @@
                     <img src="images/logo.png" alt="Logo">
                 </div>
                 <nav class="footer-nav">
-                    <a href="#home">О компании</a>
-                    <a href="#about">Услуги</a>
-                    <a href="#services">Решения</a>
-                    <a href="#partners">Партнеры</a>
-                    <a href="/pages/contacts.html">Контакты</a>
+                    <a href="about.html">О компании</a>
+                    <a href="#services">Услуги</a>
+                    <div class="footer-dropdown">
+                        <div class="footer-dropdown-header">
+                            <a href="#solutions" class="footer-dropdown-trigger">Решения</a>
+                            <!-- <i class="fas fa-chevron-down footer-dropdown-icon"></i> -->
+                        </div>
+                        <div class="footer-dropdown-content">
+                            <a href="hardware.html">Аппаратное обеспечение</a>
+                            <a href="software.html">Программное обеспечение</a>
+                            <a href="it-services.html">IT-услуги</a>
+                            <a href="cloud-solutions.html">Облачные решения</a>
+                        </div>
+                    </div>
+                    <a href="partners.html">Партнеры</a>
+                    <a href="contacts.html">Контакты</a>
                 </nav>
             </div>
 
             <div class="footer-column">
-                <h4>Телефон:</h4>
+                <h6>Телефон:</h6>
                 <div class="footer-contacts">
                     <div class="contact-item">
                         <a href="tel:+77026798545">+7 702 679 85 45</a>
@@ -601,7 +610,7 @@
                         <a href="tel:+77085004596">+7 708 500 45 96</a>
                     </div>
                     <div class="contact-time">
-                        <p>Время работы:</p>
+                        <h6>Время работы:</h6>
                         <p>Пн-Пт: 9:00 - 18:00</p>
                         <p>Сб - Вс: выходные</p>
                     </div>
@@ -610,11 +619,12 @@
 
             <div class="footer-column">
                 <div class="contact-item">
-                    <span class="label">Email:</span>
+                    <h6>Email:</h6>
                     <a href="mailto:info@itp.kz">info@itp.kz</a>
+                    <a href="mailto:e.kozlov@itplanet.group">e.kozlov@itplanet.group</a>
                 </div>
                 <div class="contact-item address">
-                    <span class="label">Адрес:</span>
+                    <h6>Адрес:</h6>
                     <p>050057, г. Алматы, Казахстан, 
                         ул. Тимирязева, 42/15</p>
                 </div>

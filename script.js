@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const popupOverlay = document.getElementById('popupOverlay');
     const closePopup = document.getElementById('closePopup');
-    const ctaButtons = document.querySelectorAll('.button');
+    const ctaButtons = document.querySelectorAll('.popup-button');
     const consultationForm = document.getElementById('consultationForm');
     const submitButton = consultationForm.querySelector('button[type="submit"]');
     const formContent = document.getElementById('formContent');
@@ -430,5 +430,20 @@ document.addEventListener('DOMContentLoaded', function() {
             clickedItem.classList.remove('active');
             body.style.display = 'none';
         }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Footer dropdown mobile toggle
+    const footerDropdown = document.querySelector('.footer-dropdown');
+    const footerDropdownHeader = document.querySelector('.footer-dropdown-header');
+
+    if (footerDropdownHeader) {
+        footerDropdownHeader.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                footerDropdown.classList.toggle('active');
+            }
+        });
     }
 });

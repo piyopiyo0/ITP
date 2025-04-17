@@ -113,7 +113,7 @@
         <div class="contacts-bottom">
             <div class="contacts-button-container">
                 <button class="button contacts-button">
-                    <span class="button-text">Получить консультацию</span>
+                    <span class="button-text popup-button">Получить консультацию</span>
                     <span class="button-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                    <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -126,6 +126,58 @@
             </div>
         </div>
     </section>
+
+        <!-- Popup Form -->
+        <div class="popup-overlay" id="popupOverlay">
+            <div class="popup-content">
+                <button class="close-popup" id="closePopup">×</button>
+                
+                <!-- Form Content -->
+                <div class="form-content" id="formContent">
+                    <h2>ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</h2>
+                    <p class="popup-subtitle">Оставьте свои контактные данные, и наши специалисты ответят на все вопросы</p>
+                    <form id="consultationForm" class="popup-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="ФИО">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required placeholder="Телефон">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <textarea id="message" name="message" required placeholder="Сообщение"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="agreement" name="agreement" required>
+                                <label for="agreement">Я принимаю условия <a href="#" class="agreement-link">политики конфиденциальности</a></label>
+                            </div>
+                        </div>
+                        <button type="submit" class="button">
+                            <span class="button-text">Отправить</span>
+                            <span class="button-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 19L19 5M19 5V19M19 5H5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+    
+                <!-- Success Message (initially hidden) -->
+                <div class="success-content" id="successContent" style="display: none;">
+                    <h2>СПАСИБО ЗА ЗАЯВКУ!</h2>
+                    <p class="popup-subtitle">Мы свяжемся с вами в ближайшее время</p>
+                </div>
+            </div>
+        </div>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></script>
     <script src="script.js"></script>
